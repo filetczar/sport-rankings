@@ -38,7 +38,7 @@ for column in column_list:
 
 data_df = pd.DataFrame(data_dict)
 
-data_df.to_csv('./data/espn-sport-rankings.csv')
+data_df.to_csv('./data/espn-sport-rankings.csv', index=False)
 
 
 
