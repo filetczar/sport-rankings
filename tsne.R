@@ -30,12 +30,15 @@ graph_df <- data.frame('sport' = raw_df$sport,
 
 
 
-p = ggplot(graph_df, aes(x,y, label = sport, color = factor(clusters))) +
-  geom_point() +
-  scale_color_manual(values = c('red', 'green', 'blue', 'orange', 'purple', 'yellow'))
-
+p = ggplot(graph_df, aes(x,y, label = sport)) +
+  geom_point()
 
 ggplotly(p)
 
+### save graph data 
+readr::write_csv(graph_df, './data/graph_data.csv')
+
+
+graph_df = read.csv('./data/graph_data.csv')
 
 
